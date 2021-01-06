@@ -12,26 +12,29 @@ shuffle_switch = 0 #1=shuffle; 0=no_shuffle
 file1 = open("output.txt","w+")
 col_count = 15
 
-words = ["wo","we","bo","be","zo","ze"]
+words = ["bran","ch","es","ca"]
 names=[]
 
 for entry in words:
     for entry2 in words:
-        names.append(entry+entry2)
+        for entry3 in words:
+            for entry4 in words:
+                names.append(entry+entry2+entry3+entry4)
 
-list1 = []
-for entry in names:
-    for entry2 in names:
-        list1.append(entry+" "+entry2)
-##        for entry3 in names:
-##            file1.write(entry+" "+entry2+" "+entry3+"; ")
+print(names)
 
-if shuffle_switch:    
-    random.shuffle(list1)
-for idx, listitem in enumerate(list1):
-    file1.write('%s, ' % listitem)
-    if(idx+1)%col_count == 0:
-        file1.write('\n')
+##list1 = []
+##for entry in names:
+##    for entry2 in names:
+##        list1.append(entry+" "+entry2)
+####        for entry3 in names:
+####            file1.write(entry+" "+entry2+" "+entry3+"; ")
+##
+##if shuffle_switch:    
+##    random.shuffle(list1)
+##for idx, listitem in enumerate(list1):
+##    file1.write('%s, ' % listitem)
+##    if(idx+1)%col_count == 0:
+##        file1.write('\n')
 file1.close()
 
-    
